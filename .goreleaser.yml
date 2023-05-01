@@ -24,4 +24,4 @@ release:
     draft: true
 
 changelog:
-    skip: false
+    skip: true
