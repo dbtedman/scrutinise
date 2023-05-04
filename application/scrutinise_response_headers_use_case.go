@@ -13,5 +13,16 @@ type ScrutiniseResponseHeadersOutput struct {
 }
 
 func (uc ScrutiniseResponseHeadersUseCase) Execute(in ScrutiniseResponseHeadersInput) (ScrutiniseResponseHeadersOutput, error) {
-	return ScrutiniseResponseHeadersOutput{}, nil
+
+	anObservation, anObservationError := domain.NewObservation()
+
+	if anObservationError != nil {
+		return ScrutiniseResponseHeadersOutput{}, anObservationError
+	}
+
+	return ScrutiniseResponseHeadersOutput{
+		Observations: []domain.Observation{
+			anObservation,
+		},
+	}, nil
 }

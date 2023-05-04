@@ -4,3 +4,7 @@ package domain
 // Recommendation will be referenced.
 type Observation struct {
 }
+
+func NewObservation() (Observation, error) {
+	return Observation{}, nil
+}
