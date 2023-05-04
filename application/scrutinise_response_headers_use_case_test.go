@@ -12,6 +12,6 @@ func TestCanScrutiniseResponseHeaders(t *testing.T) {
 
 	result, resultError := uc.Execute(in)
 
-	assert.NotNil(t, result)
+	assert.Len(t, result.Observations, 0)
 	assert.Nil(t, resultError)
 }
