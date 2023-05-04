@@ -2,14 +2,10 @@ package application
 
 import "github.com/dbtedman/scrutinise/domain"
 
+// A ScrutiniseResponseHeadersUseCase defines a series of Observations about the provided
+// response headers. These Observations will, where possible, make Recommendations for
+// improvements to be made.
 type ScrutiniseResponseHeadersUseCase struct {
-}
-
-type ScrutiniseResponseHeadersInput struct {
-}
-
-type ScrutiniseResponseHeadersOutput struct {
-	Observations []domain.Observation
 }
 
 func (uc ScrutiniseResponseHeadersUseCase) Execute(in ScrutiniseResponseHeadersInput) (ScrutiniseResponseHeadersOutput, error) {
@@ -25,4 +21,11 @@ func (uc ScrutiniseResponseHeadersUseCase) Execute(in ScrutiniseResponseHeadersI
 			anObservation,
 		},
 	}, nil
+}
+
+type ScrutiniseResponseHeadersInput struct {
+}
+
+type ScrutiniseResponseHeadersOutput struct {
+	Observations []domain.Observation
 }
