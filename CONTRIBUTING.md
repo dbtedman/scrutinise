@@ -6,7 +6,25 @@
 ## Build
 
 ```shell
-goreleaser build --clean --snapshot
+make build
+```
+
+## Lint
+
+```shell
+make lint
+```
+
+## Format
+
+```shell
+make format
+```
+
+## Test
+
+```shell
+make test
 ```
 
 ## Release
