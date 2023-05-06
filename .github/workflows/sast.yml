@@ -1,0 +1,32 @@
+name: "sast"
+
+on:
+    pull_request:
+        branches:
+            - "main"
+    push:
+        branches:
+            - "main"
+    schedule:
+        -   cron: "0 0 8 * *"
+
+permissions: "read-all"
+
+jobs:
+    osv:
+        runs-on: "ubuntu-latest"
+
+        steps:
+            -   name: "Checkout Code"
+                uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            -   name: "Setup Go"
+                uses: "actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9"
+                with:
+                    go-version-file: "./go.mod"
+            -   name: "Install OSV Scanner"
+                run: |
+                    curl -o /usr/local/bin/osv-scanner https://github.com/google/osv-scanner/releases/download/v1.3.2/osv-scanner_1.3.2_linux_amd64 \
+                      && chmod +x /usr/local/bin/osv-scanner \
+                      && /usr/local/bin/osv-scanner -version
+            -   name: "Run OSV Scanner"
+                run: "osv-scanner ./"
