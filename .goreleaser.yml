@@ -32,6 +32,7 @@ brews:
           owner: "dbtedman"
           name: "homebrew-tap"
           branch: "main"
+          token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
       homepage: "https://github.com/dbtedman/scrutinise"
       description: "Tool to scrutinise website development security."
       license: "MIT"
