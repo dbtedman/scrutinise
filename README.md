@@ -8,26 +8,30 @@
 
 Tool to scrutinise website development security.
 
--   [How to get started?](#how-to-get-started)
--   [How to contribute?](#how-to-contribute)
--   [Is this project secure?](#is-this-project-secure)
--   [License](#license)
+- [How to get started?](#how-to-get-started)
+- [How to contribute?](#how-to-contribute)
+- [Is this project secure?](#is-this-project-secure)
+- [License](#license)
 
 ## How to get started?
 
+- [Install (macOS)](#install-macos)
+- [Install (release binary)](#install-release-binary)
+- [Install (from source)](#install-from-source)
+- [Run](#run)
+
 ### Install (macOS)
 
-```shell
-brew tap dbtedman/tap
-```
+[dbtedman/tap/scrutinise (github.com)](https://github.com/dbtedman/homebrew-tap/blob/main/Formula/scrutinise.rb)
 
 ```shell
-brew install scrutinise
+brew tap dbtedman/tap && brew install scrutinise
 ```
 
 ### Install (release binary)
 
-Download a pre-compiled binary from a [release (github.com)](https://github.com/dbtedman/scrutinise/releases) and install it into your [path (en.wikipedia.org)](https://en.wikipedia.org/wiki/PATH_(variable)_).
+Download a pre-compiled binary from a [release (github.com)](https://github.com/dbtedman/scrutinise/releases) and
+install it into your [path (en.wikipedia.org)](https://en.wikipedia.org/wiki/PATH_(variable)_).
 
 ### Install (from source)
 
@@ -49,7 +53,8 @@ Read our [Contributing Guide](./CONTRIBUTING.md) to learn more about how to cont
 
 ## Is this project secure?
 
-Read our [Security Guide](./SECURITY.md) to learn how security is considered during the development and operation of this
+Read our [Security Guide](./SECURITY.md) to learn how security is considered during the development and operation of
+this
 tool.
 
 ## License
