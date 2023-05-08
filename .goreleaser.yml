@@ -25,3 +25,13 @@ release:
 
 changelog:
     skip: true
+
+brews:
+    - name: "scrutinise"
+      tap:
+          owner: "dbtedman"
+          name: "homebrew-tap"
+          branch: "main"
+      homepage: "https://github.com/dbtedman/scrutinise"
+      description: "Tool to scrutinise website development security."
+      license: "MIT"
