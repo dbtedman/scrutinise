@@ -15,13 +15,21 @@ Tool to scrutinise website development security.
 
 ## How to get started?
 
-### Install
+### Install (macOS)
 
-#### From Release
+```shell
+brew tap dbtedman/tap
+```
+
+```shell
+brew install scrutinise
+```
+
+### Install (release binary)
 
 Download a pre-compiled binary from a [release (github.com)](https://github.com/dbtedman/scrutinise/releases) and install it into your [path (en.wikipedia.org)](https://en.wikipedia.org/wiki/PATH_(variable)_).
 
-#### From Source
+### Install (from source)
 
 > Replacing `$VERSION` with the current latest version.
 
