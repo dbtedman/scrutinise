@@ -5,20 +5,20 @@ all: install lint build test
 
 .PHONY: install
 install:
-	@go mod vendor
+	@CGO_ENABLED=0 go mod vendor
 
 .PHONY: lint
 lint:
-	@golangci-lint run
+	@CGO_ENABLED=0 golangci-lint run
 
 .PHONY: format
 format:
-	@golangci-lint run --fix
+	@CGO_ENABLED=0 golangci-lint run --fix
 
 .PHONY: build
 build:
-	@goreleaser build --clean --snapshot
+	@CGO_ENABLED=0 goreleaser build --clean --snapshot
 
 .PHONY: test
 test:
-	@go test -race $(shell go list ./... | grep -v /vendor/)
+	@CGO_ENABLED=0 go test -race $(shell go list ./... | grep -v /vendor/)
