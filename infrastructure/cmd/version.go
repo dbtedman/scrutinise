@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
@@ -17,7 +15,7 @@ func VersionCommand(resultCh *chan int) *cobra.Command {
 	return &cobra.Command{
 		Use: "version",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Printf("scrutinise version: %s, commit: %s, built at: %s\n", version, commit, date)
+			CobraLog(cmd, "scrutinise version: %s, commit: %s, built at: %s\n", version, commit, date)
 			*resultCh <- SuccessResult
 		},
 	}
