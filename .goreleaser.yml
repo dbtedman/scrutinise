@@ -8,6 +8,10 @@ builds:
         mod_timestamp: "{{ .CommitTimestamp }}"
         flags:
             - "-trimpath"
+        ldflags:
+            - "-X github.com/dbtedman/scrutinise/infrastructure/cmd.version={{.Version}}"
+            - "-X github.com/dbtedman/scrutinise/infrastructure/cmd.commit={{.Commit}}"
+            - "-X github.com/dbtedman/scrutinise/infrastructure/cmd.date={{.CommitDate}}"
         goos:
             - "linux"
             - "darwin"
@@ -21,13 +25,13 @@ archives:
         name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 
 brews:
-    - name: "scrutinise"
-      tap:
-          owner: "dbtedman"
-          name: "homebrew-tap"
-          branch: "main"
-          token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-      homepage: "https://github.com/dbtedman/scrutinise"
-      description: "Tool to scrutinise website development security."
-      license: "MIT"
-      folder: "Formula"
+    -   name: "scrutinise"
+        tap:
+            owner: "dbtedman"
+            name: "homebrew-tap"
+            branch: "main"
+            token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+        homepage: "https://github.com/dbtedman/scrutinise"
+        description: "Tool to scrutinise website development security."
+        license: "MIT"
+        folder: "Formula"

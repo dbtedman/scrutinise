@@ -10,8 +10,6 @@ import (
 )
 
 func main() {
-	fmt.Println("scrutinise")
-
 	signalsCh := make(chan os.Signal, 1)
 	resultCh := make(chan int)
 	var result int

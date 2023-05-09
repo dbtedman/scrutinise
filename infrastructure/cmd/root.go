@@ -7,7 +7,7 @@ import (
 )
 
 func RootCommand(resultCh *chan int) *cobra.Command {
-	return &cobra.Command{
+	rootCommand := &cobra.Command{
 		Use:   "scrutinise",
 		Short: "Tool to scrutinise website development security.",
 		Run: func(cmd *cobra.Command, args []string) {
@@ -21,4 +21,8 @@ func RootCommand(resultCh *chan int) *cobra.Command {
 			}
 		},
 	}
+
+	rootCommand.AddCommand(VersionCommand(resultCh))
+
+	return rootCommand
 }
