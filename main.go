@@ -1,14 +1,13 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
-)
 
-const errorResult = 1
+	"github.com/dbtedman/scrutinise/infrastructure/cmd"
+)
 
 func main() {
 	fmt.Println("scrutinise")
@@ -26,11 +25,11 @@ func main() {
 	}()
 
 	go func() {
-		err := errors.New("no command is defined yet")
+		err := cmd.RootCommand(&resultCh).Execute()
 
 		if err != nil {
 			fmt.Println(err)
-			resultCh <- errorResult
+			resultCh <- cmd.ErrorResult
 		}
 	}()
 
