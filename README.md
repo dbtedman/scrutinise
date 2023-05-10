@@ -8,6 +8,14 @@
 
 Tool to scrutinise website development security.
 
+| Supports  | Architecture    |
+|-----------|-----------------|
+| `linux`   | `amd64` `arm64` |
+| `darwin`  | `amd64` `arm64` |
+| `windows` | `amd64` `arm64` |
+
+> 💡 `darwin` refers to the [macOS kernel (en.wikipedia.org)](https://en.wikipedia.org/wiki/Darwin_(operating_system)).
+
 - [How to get started?](#how-to-get-started)
 - [How to contribute?](#how-to-contribute)
 - [Is this project secure?](#is-this-project-secure)
