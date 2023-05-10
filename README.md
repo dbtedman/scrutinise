@@ -31,7 +31,7 @@ Tool to scrutinise website development security.
 
 ### Install (homebrew)
 
-[dbtedman/tap/scrutinise (github.com)](https://github.com/dbtedman/homebrew-tap/blob/main/Formula/scrutinise.rb)
+[github.com/dbtedman/homebrew-tap (github.com)](https://github.com/dbtedman/homebrew-tap/blob/main/Formula/scrutinise.rb)
 
 ```shell
 brew tap dbtedman/tap && brew install scrutinise
@@ -39,7 +39,12 @@ brew tap dbtedman/tap && brew install scrutinise
 
 ### Install (scoop)
 
-> Soon
+[github.com/dbtedman/scoop-bucket (github.com)](https://github.com/dbtedman/scoop-bucket/blob/main/bucket/scrutinise.json)
+
+```shell
+scoop bucket add dbtedman-scoop https://github.com/dbtedman/scoop-bucket
+scoop install scrutinise
+```
 
 ### Install (release binary)
 
