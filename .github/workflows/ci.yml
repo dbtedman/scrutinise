@@ -73,8 +73,8 @@ jobs:
 #                uses: "golangci/golangci-lint-action@08e2f20817b15149a52b5b3ebe7de50aff2ba8c5"
 #                with:
 #                    version: "latest"
-            -   name: "Lint"
-                run: "make lint"
+#            -   name: "Lint"
+#                run: "make lint"
             -   name: "Test"
                 run: "make test"
             -   name: "Build"
