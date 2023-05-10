@@ -38,6 +38,8 @@ archives:
 
 brews:
     -   name: "scrutinise"
+        ids:
+            - "binary"
         tap:
             owner: "dbtedman"
             name: "homebrew-tap"
@@ -50,6 +52,8 @@ brews:
 
 scoops:
     -   name: "scrutinise"
+        ids:
+            - "zip"
         bucket:
             owner: "dbtedman"
             name: "scoop-bucket"
