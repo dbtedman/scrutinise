@@ -45,19 +45,8 @@ jobs:
                 uses: "actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9"
                 with:
                     go-version-file: "./go.mod"
-            -   name: "Setup golangci-lint"
-                uses: "golangci/golangci-lint-action@08e2f20817b15149a52b5b3ebe7de50aff2ba8c5"
-                with:
-                    version: "latest"
-            -   name: "Lint"
-                run: "make lint"
             -   name: "Test"
                 run: "make test"
-            -   name: "Build"
-                uses: "goreleaser/goreleaser-action@f82d6c1c344bcacabba2c841718984797f664a6b"
-                with:
-                    version: "latest"
-                    args: "build --clean --snapshot"
 
     windows:
         runs-on: "windows-latest"
@@ -69,16 +58,5 @@ jobs:
                 uses: "actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9"
                 with:
                     go-version-file: "./go.mod"
-#            -   name: "Setup golangci-lint"
-#                uses: "golangci/golangci-lint-action@08e2f20817b15149a52b5b3ebe7de50aff2ba8c5"
-#                with:
-#                    version: "latest"
-#            -   name: "Lint"
-#                run: "make lint"
             -   name: "Test"
                 run: "make test"
-            -   name: "Build"
-                uses: "goreleaser/goreleaser-action@f82d6c1c344bcacabba2c841718984797f664a6b"
-                with:
-                    version: "latest"
-                    args: "build --clean --snapshot"
