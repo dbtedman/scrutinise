@@ -43,3 +43,15 @@ brews:
         description: "Tool to scrutinise website development security."
         license: "MIT"
         folder: "Formula"
+
+scoops:
+    -   name: "scrutinise"
+        bucket:
+            owner: "dbtedman"
+            name: "scoop-bucket"
+            branch: "main"
+            token: "{{ .Env.SCOOP_TAP_GITHUB_TOKEN }}"
+        homepage: "https://github.com/dbtedman/scrutinise"
+        description: "Tool to scrutinise website development security."
+        license: "MIT"
+        folder: "bucket"

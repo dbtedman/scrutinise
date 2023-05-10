@@ -23,18 +23,23 @@ Tool to scrutinise website development security.
 
 ## How to get started?
 
-- [Install (macOS)](#install-macos)
+- [Install (homebrew)](#install-homebrew)
+- [Install (scoop)](#install-scoop)
 - [Install (release binary)](#install-release-binary)
 - [Install (from source)](#install-from-source)
 - [Run](#run)
 
-### Install (macOS)
+### Install (homebrew)
 
 [dbtedman/tap/scrutinise (github.com)](https://github.com/dbtedman/homebrew-tap/blob/main/Formula/scrutinise.rb)
 
 ```shell
 brew tap dbtedman/tap && brew install scrutinise
 ```
+
+### Install (scoop)
+
+> Soon
 
 ### Install (release binary)
 
