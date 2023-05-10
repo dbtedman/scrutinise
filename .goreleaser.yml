@@ -30,6 +30,10 @@ builds:
 
 archives:
     -   format: "binary"
+        id: "binary"
+        name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
+    -   format: "zip"
+        id: "zip"
         name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 
 brews:
