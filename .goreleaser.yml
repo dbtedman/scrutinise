@@ -36,6 +36,10 @@ archives:
         id: "zip"
         name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}'
 
+checksum:
+    name_template: '{{ .ProjectName }}_{{ .Version }}_SHA256SUMS'
+    algorithm: "sha256"
+
 brews:
     -   name: "scrutinise"
         ids:
