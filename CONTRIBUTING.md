@@ -48,4 +48,4 @@ Once the release workflow has been completed, you will need to update the draft 
 > 💡 Resources referenced during the development of this project.
 
 - [OSV Scanner (github.com)](https://github.com/google/osv-scanner) - Referenced for guidance on go release workflow.
-- [Goreleaser - homebrew (goreleaser.com)](https://goreleaser.com/customization/homebrew/) - Referenced for guidance on publishing homebrew packages as part of go release build.
+- [Goreleaser - homebrew (goreleaser.com)](https://goreleaser.com/customization/homebrew/) - Referenced for guidance on publishing homebrew packages as part of go release build, and for creating SLSA build provenance.

@@ -15,13 +15,17 @@ jobs:
             contents: "write"
 
         steps:
-            -   uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+            -   name: "Checkout Code"
+                uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
                 with:
                     fetch-depth: 0
-            -   uses: "actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9"
+            -   name: "Setup Go"
+                uses: "actions/setup-go@4d34df0c2316fe8122ab82dc22947d607c0c91f9"
                 with:
                     go-version-file: "./go.mod"
-            -   uses: "goreleaser/goreleaser-action@f82d6c1c344bcacabba2c841718984797f664a6b"
+            -   name: "Release"
+                uses: "goreleaser/goreleaser-action@f82d6c1c344bcacabba2c841718984797f664a6b"
+                id: "release"
                 with:
                     version: "latest"
                     args: "release --clean"
@@ -29,3 +33,23 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     HOMEBREW_TAP_GITHUB_TOKEN: ${{ secrets.HOMEBREW_TAP_GITHUB_TOKEN }}
                     SCOOP_TAP_GITHUB_TOKEN: ${{ secrets.SCOOP_TAP_GITHUB_TOKEN }}
+            -   name: "Generate subject"
+                id: "hash"
+                env:
+                    ARTIFACTS: "${{ steps.release.outputs.artifacts }}"
+                run: |
+                    set -euo pipefail
+                    checksum_file=$(echo "$ARTIFACTS" | jq -r '.[] | select (.type=="Checksum") | .path')
+                    echo "hashes=$(cat $checksum_file | base64 -w0)" >> "$GITHUB_OUTPUT"
+
+    provenance:
+        needs:
+            - "release"
+        permissions:
+            actions: "read" # To read the workflow path.
+            id-token: "write" # To sign the provenance.
+            contents: "write" # To add assets to a release.
+        uses: "slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.5.0"
+        with:
+            base64-subjects: "${{ needs.release.outputs.hashes }}"
+            upload-assets: false # Upload to a new release.

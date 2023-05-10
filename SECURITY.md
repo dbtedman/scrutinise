@@ -4,23 +4,26 @@
 
 Outlines how security is considered during the development of Scrutinise.
 
--   [Dependency Vulnerability Scanning](#dependency-vulnerability-scanning)
--   [Security Disclosure Policy](#security-disclosure-policy)
--   [Security Update Policy](#security-update-policy)
--   [Security Related Configuration](#security-related-configuration)
--   [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
+- [Dependency Vulnerability Scanning](#dependency-vulnerability-scanning)
+- [Security Disclosure Policy](#security-disclosure-policy)
+- [Security Update Policy](#security-update-policy)
+- [Security Related Configuration](#security-related-configuration)
+- [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
+- [SLSA Build Provenance](#slsa-build-provenance)
 
 ## Dependency Vulnerability Scanning
 
--   [GitHub code scanning (docs.github.com)](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning) via [CodeQL (codeql.github.com)](https://codeql.github.com) and [Snyk (snyk.io)](https://snyk.io)
--   [GitHub dependabot alerts (docs.github.com)](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts)
--   [GitHub dependabot security updates (docs.github.com)](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates)
--   [GitHub secret scanning (docs.github.com)](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
--   [OSV Scanning (osv.dev)](https://osv.dev/)
+- [GitHub code scanning (docs.github.com)](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning)
+  via [CodeQL (codeql.github.com)](https://codeql.github.com) and [Snyk (snyk.io)](https://snyk.io)
+- [GitHub dependabot alerts (docs.github.com)](https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts)
+- [GitHub dependabot security updates (docs.github.com)](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates)
+- [GitHub secret scanning (docs.github.com)](https://docs.github.com/en/code-security/secret-scanning/about-secret-scanning)
+- [OSV Scanning (osv.dev)](https://osv.dev/)
 
 ## Security Disclosure Policy
 
-Privately report a vulnerability using [GitHub Security Advisories (github.com)](https://github.com/dbtedman/scrutinise/security/advisories).
+Privately report a vulnerability
+using [GitHub Security Advisories (github.com)](https://github.com/dbtedman/scrutinise/security/advisories).
 
 ## Security Update Policy
 
@@ -33,3 +36,13 @@ None currently.
 ## Known Security Gaps and Future Enhancements
 
 Look at [GitHub issues tagged **Security** (github.com)](https://github.com/dbtedman/security/labels/security).
+
+## SLSA Build Provenance
+
+> ⚠️ Implementation in progress.
+
+Targeting [SLSA 3](https://slsa.dev/get-started#SLSA3):
+
+- Run your build on a hosted platform that generates and signs provenance
+- Ensure that build runs cannot influence each other
+- Produce signed provenance that can be verified as authentic
