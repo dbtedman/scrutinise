@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"fmt"
-
 	"github.com/spf13/cobra"
 )
 
@@ -14,7 +12,6 @@ func RootCommand(resultCh *chan int) *cobra.Command {
 			err := cmd.Help()
 
 			if err != nil {
-				fmt.Println(err)
 				*resultCh <- ErrorResult
 			} else {
 				*resultCh <- SuccessResult
