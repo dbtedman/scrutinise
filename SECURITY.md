@@ -9,7 +9,6 @@ Outlines how security is considered during the development of Scrutinise.
 - [Security Update Policy](#security-update-policy)
 - [Security Related Configuration](#security-related-configuration)
 - [Known Security Gaps and Future Enhancements](#known-security-gaps-and-future-enhancements)
-- [SLSA Build Provenance](#slsa-build-provenance)
 
 ## Dependency Vulnerability Scanning
 
@@ -36,13 +35,3 @@ None currently.
 ## Known Security Gaps and Future Enhancements
 
 Look at [GitHub issues tagged **Security** (github.com)](https://github.com/dbtedman/security/labels/security).
-
-## SLSA Build Provenance
-
-> ⚠️ Implementation in progress.
-
-Targeting [SLSA 3](https://slsa.dev/get-started#SLSA3):
-
-- Run your build on a hosted platform that generates and signs provenance
-- Ensure that build runs cannot influence each other
-- Produce signed provenance that can be verified as authentic
