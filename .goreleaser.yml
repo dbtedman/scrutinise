@@ -67,3 +67,48 @@ scoops:
         description: "Tool to scrutinise website development security."
         license: "MIT"
         folder: "bucket"
+
+dockers:
+    - image_templates:
+          - 'dbtedman/scrutinise:{{ .Tag }}-amd64'
+      dockerfile: "goreleaser.Dockerfile"
+      use: "buildx"
+      build_flag_templates:
+          - "--pull"
+          - "--label=org.opencontainers.image.title=scrutinise"
+          - "--label=org.opencontainers.image.description=Tool to scrutinise website development security."
+          - "--label=org.opencontainers.image.licenses=MIT"
+          - "--label=org.opencontainers.image.created={{.Date}}"
+          - "--label=org.opencontainers.image.name={{.ProjectName}}"
+          - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+          - "--label=org.opencontainers.image.version={{.Version}}"
+          - "--label=org.opencontainers.image.source={{.GitURL}}"
+          - "--label=org.opencontainers.image.url={{.GitURL}}"
+          - "--platform=linux/amd64"
+    - image_templates:
+          - 'dbtedman/scrutinise:{{ .Tag }}-arm64'
+      dockerfile: "goreleaser.Dockerfile"
+      use: "buildx"
+      build_flag_templates:
+          - "--pull"
+          - "--label=org.opencontainers.image.title=scrutinise"
+          - "--label=org.opencontainers.image.description=Tool to scrutinise website development security."
+          - "--label=org.opencontainers.image.licenses=MIT"
+          - "--label=org.opencontainers.image.created={{.Date}}"
+          - "--label=org.opencontainers.image.name={{.ProjectName}}"
+          - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+          - "--label=org.opencontainers.image.version={{.Version}}"
+          - "--label=org.opencontainers.image.source={{.GitURL}}"
+          - "--label=org.opencontainers.image.url={{.GitURL}}"
+          - "--platform=linux/arm64"
+      goarch: "arm64"
+
+docker_manifests:
+    - name_template: 'dbtedman/scrutinise:{{ .Tag }}'
+      image_templates:
+          - 'dbtedman/scrutinise:{{ .Tag }}-amd64'
+          - 'dbtedman/scrutinise:{{ .Tag }}-arm64'
+    - name_template: 'dbtedman/scrutinise:latest'
+      image_templates:
+          - 'dbtedman/scrutinise:{{ .Tag }}-amd64'
+          - 'dbtedman/scrutinise:{{ .Tag }}-arm64'
