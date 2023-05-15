@@ -41,6 +41,7 @@ jobs:
                     set -euo pipefail
                     checksum_file=$(echo "$ARTIFACTS" | jq -r '.[] | select (.type=="Checksum") | .path')
                     echo "hashes=$(cat $checksum_file | base64 -w0)" >> "$GITHUB_OUTPUT"
+            -   run: "echo $GITHUB_OUTPUT"
 
     provenance:
         needs:
@@ -52,4 +53,4 @@ jobs:
         uses: "slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.6.0"
         with:
             base64-subjects: "${{ needs.release.outputs.hashes }}"
-            upload-assets: false # Upload to a new release.
+            upload-assets: true # Upload to a new release.
