@@ -10,6 +10,9 @@ import (
 )
 
 func main() {
+	logger := cmd.Logger(os.Stdout)
+	logger.Info("scrutinise :: begin")
+
 	signalsCh := make(chan os.Signal, 1)
 	resultCh := make(chan int)
 	var result int
@@ -19,6 +22,7 @@ func main() {
 
 	defer func() {
 		// cleanup any resources now, then exit
+		logger.Info("scrutinise :: end")
 		os.Exit(result)
 	}()
 

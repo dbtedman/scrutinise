@@ -1,11 +1,19 @@
 package cmd
 
 import (
-	"fmt"
+	"io"
 
+	"github.com/charmbracelet/log"
 	"github.com/spf13/cobra"
 )
 
 func CobraLog(cmd *cobra.Command, format string, a ...any) {
-	_, _ = fmt.Fprintf(cmd.OutOrStdout(), format, a...)
+	logger := Logger(cmd.OutOrStdout())
+	logger.Infof(format, a...)
+}
+
+func Logger(writer io.Writer) *log.Logger {
+	logger := log.New(writer)
+	logger.SetReportTimestamp(true)
+	return logger
 }

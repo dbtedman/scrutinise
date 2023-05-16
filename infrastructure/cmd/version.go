@@ -15,7 +15,7 @@ func VersionCommand(resultCh *chan int) *cobra.Command {
 	return &cobra.Command{
 		Use: "version",
 		Run: func(cmd *cobra.Command, args []string) {
-			CobraLog(cmd, "scrutinise version: %s, commit: %s, built at: %s\n", version, commit, date)
+			CobraLog(cmd, "scrutinise version: %s, commit: %s, built at: %s", version, commit, date)
 			*resultCh <- SuccessResult
 		},
 	}
