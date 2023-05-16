@@ -3,6 +3,8 @@
 [![CI GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/scrutinise/ci.yml?branch=main&style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/scrutinise/actions/workflows/ci.yml?query=branch%3Amain)
 [![SAST GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/scrutinise/sast.yml?branch=main&style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/scrutinise/actions/workflows/sast.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/dbtedman/scrutinise?style=for-the-badge)](https://goreportcard.com/report/github.com/dbtedman/scrutinise)
+[![GitHub all releases](https://img.shields.io/github/downloads/dbtedman/scrutinise/total?style=for-the-badge&logo=github)](https://github.com/dbtedman/scrutinise/releases)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dbtedman/scrutinise?sort=semver&style=for-the-badge&logo=docker)](https://hub.docker.com/r/dbtedman/scrutinise)
 
 > ⚠️ WARNING! This project is in early development, and is not ready for production use.
 
@@ -25,6 +27,7 @@ Tool to scrutinise website development security.
 
 - [Install (homebrew)](#install-homebrew)
 - [Install (scoop)](#install-scoop)
+- [Install (docker)](#install-docker)
 - [Install (release binary)](#install-release-binary)
 - [Install (from source)](#install-from-source)
 - [Run](#run)
@@ -46,6 +49,12 @@ scoop bucket add dbtedman-scoop https://github.com/dbtedman/scoop-bucket
 scoop install scrutinise
 ```
 
+### Install (docker)
+
+```shell
+docker pull dbtedman/scrutinise
+```
+
 ### Install (release binary)
 
 Download a pre-compiled binary from a [release (github.com)](https://github.com/dbtedman/scrutinise/releases) and
@@ -63,6 +72,12 @@ go install https://github.com/dbtedman/scrutinise@$VERSION
 
 ```shell
 scrutinise
+```
+
+or via Docker
+
+```shell
+docker run -it dbtedman/scrutinise
 ```
 
 ## How to contribute?
