@@ -19,6 +19,10 @@ format:
 build:
 	@CGO_ENABLED=0 goreleaser build --clean --snapshot
 
+.PHONY: build_fast
+build_fast:
+	@CGO_ENABLED=0 go build -mod vendor -o ./dist/scrutinise ./
+
 .PHONY: test
 test:
 	@CGO_ENABLED=1 go test -race $(shell go list ./... | grep -v /vendor/)

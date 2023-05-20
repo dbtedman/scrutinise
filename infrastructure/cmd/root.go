@@ -20,6 +20,7 @@ func RootCommand(resultCh *chan int) *cobra.Command {
 	}
 
 	rootCommand.AddCommand(VersionCommand(resultCh))
+	rootCommand.AddCommand(URLCommand(resultCh))
 
 	return rootCommand
 }

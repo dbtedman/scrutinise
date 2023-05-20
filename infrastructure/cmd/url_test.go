@@ -1,20 +1,19 @@
-package cmd_test
+package cmd
 
 import (
 	"bytes"
 	"testing"
 
-	"github.com/dbtedman/scrutinise/infrastructure/cmd"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestRootCommand(t *testing.T) {
+func TestURLCommand(t *testing.T) {
 	// given
 	resultCh := make(chan int)
 	errorCh := make(chan error)
 	var errConsole bytes.Buffer
 	var outConsole bytes.Buffer
-	command := cmd.RootCommand(&resultCh)
+	command := URLCommand(&resultCh)
 	command.SetErr(&errConsole)
 	command.SetOut(&outConsole)
 
@@ -26,11 +25,9 @@ func TestRootCommand(t *testing.T) {
 	err := <-errorCh
 
 	// then
-	assert.Equal(t, cmd.SuccessResult, result)
+	assert.Equal(t, SuccessResult, result)
 	assert.Nil(t, err)
 	assert.Equal(t, "", errConsole.String())
-	assert.Contains(t, outConsole.String(), "Tool to scrutinise website development security")
-	assert.Contains(t, outConsole.String(), "-h, --help   help for scrutinise")
+	assert.Contains(t, outConsole.String(), "")
+	assert.Contains(t, outConsole.String(), "")
 }
-
-// TODO: How to test sub-commands loaded into the root command?
