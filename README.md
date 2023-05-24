@@ -3,9 +3,6 @@
 [![CI GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/scrutinise/ci.yml?branch=main&style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/scrutinise/actions/workflows/ci.yml?query=branch%3Amain)
 [![SAST GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/scrutinise/sast.yml?branch=main&style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/scrutinise/actions/workflows/sast.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/dbtedman/scrutinise?style=for-the-badge)](https://goreportcard.com/report/github.com/dbtedman/scrutinise)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/scrutinise/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/scrutinise)
-[![GitHub all releases](https://img.shields.io/github/downloads/dbtedman/scrutinise/total?style=for-the-badge&logo=github)](https://github.com/dbtedman/scrutinise/releases)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dbtedman/scrutinise?sort=semver&style=for-the-badge&logo=docker)](https://hub.docker.com/r/dbtedman/scrutinise)
 
 > ⚠️ WARNING! This project is in early development, and is not ready for production use.
 
@@ -44,6 +41,8 @@ docker run -it dbtedman/scrutinise
 Read our [Contributing Guide](./CONTRIBUTING.md) to learn more about how to contribute to this project.
 
 ## Is this project secure?
+
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/scrutinise/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/scrutinise)
 
 Read our [Security Guide](./SECURITY.md) to learn how security is considered during the development and operation of
 this
