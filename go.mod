@@ -3,7 +3,7 @@ module github.com/dbtedman/scrutinise
 go 1.20
 
 require (
-	github.com/charmbracelet/log v0.2.1
+	github.com/charmbracelet/log v0.2.2
 	github.com/spf13/cobra v1.7.0
 	github.com/stretchr/testify v1.8.3
 )
