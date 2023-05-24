@@ -1,6 +1,7 @@
 # [Scrutinise](https://github.com/dbtedman/scrutinise) Security Policy
 
 [![SAST GitHub Pipeline](https://img.shields.io/github/actions/workflow/status/dbtedman/scrutinise/sast.yml?branch=main&style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/scrutinise/actions/workflows/sast.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/dbtedman/scrutinise/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/dbtedman/scrutinise)
 
 Outlines how security is considered during the development of Scrutinise.
 
