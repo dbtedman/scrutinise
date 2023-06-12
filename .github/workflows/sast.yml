@@ -21,7 +21,7 @@ jobs:
             security-events: "write"
         steps:
             -   name: "Checkout Code"
-                uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+                uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
             -   name: "Setup CodeQL"
                 uses: "github/codeql-action/init@29b1f65c5e92e24fe6b6647da1eaabe529cec70f"
                 with:
@@ -46,7 +46,7 @@ jobs:
             actions: "read"
         steps:
             -   name: "Checkout Code"
-                uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+                uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
                 with:
                     persist-credentials: false
             -   name: "OpenSSF Scorecard"
@@ -71,7 +71,7 @@ jobs:
             contents: "read"
         steps:
             -   name: "Checkout Code"
-                uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+                uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
             -   name: "Setup Go"
                 uses: "actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753"
                 with:
@@ -91,7 +91,7 @@ jobs:
         runs-on: "ubuntu-latest"
         steps:
             -   name: "Checkout Code"
-                uses: "actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab"
+                uses: "actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9"
             -   name: "Setup Go"
                 uses: "actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753"
                 with:
